@@ -6,7 +6,7 @@ createApp({
             contacts : [
                 {
                     name: 'Michele',
-                    avatar: 'assets/img/avatar_1.jpg',
+                    avatar: './img/avatar_1.jpg',
                     visible: true,
                     messages: [
                         {
@@ -28,7 +28,7 @@ createApp({
                 },
                 {
                     name: 'Fabio',
-                    avatar: 'assets/img/avatar_2.jpg',
+                    avatar: './img/avatar_2.jpg',
                     visible: true,
                     messages: [
                         {
@@ -50,7 +50,7 @@ createApp({
                 },
                 {
                     name: 'Samuele',
-                    avatar: 'assets/img/avatar_3.jpg',
+                    avatar: './img/avatar_3.jpg',
                     visible: true,
                     messages: [
                         {
@@ -72,7 +72,7 @@ createApp({
                 },
                 {
                     name: 'Alessandro B.',
-                    avatar: 'assets/img/avatar_4.jpg',
+                    avatar: './img/avatar_4.jpg',
                     visible: true,
                     messages: [
                         {
@@ -89,7 +89,7 @@ createApp({
                 },
                 {
                     name: 'Alessandro L.',
-                    avatar: 'assets/img/avatar_5.jpg',
+                    avatar: './img/avatar_5.jpg',
                     visible: true,
                     messages: [
                         {
@@ -106,7 +106,7 @@ createApp({
                 },
                 {
                     name: 'Claudia',
-                    avatar: 'assets/img/avatar_6.jpg',
+                    avatar: './img/avatar_6.jpg',
                     visible: true,
                     messages: [
                         {
@@ -128,7 +128,7 @@ createApp({
                 },
                 {
                     name: 'Federico',
-                    avatar: 'assets/img/avatar_7.jpg',
+                    avatar: './img/avatar_7.jpg',
                     visible: true,
                     messages: [
                         {
@@ -145,7 +145,7 @@ createApp({
                 },
                 {
                     name: 'Davide',
-                    avatar: 'assets/img/avatar_8.jpg',
+                    avatar: './img/avatar_8.jpg',
                     visible: true,
                     messages: [
                         {

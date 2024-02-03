@@ -7,35 +7,147 @@
     <title>Boolzapp</title>
 
     <!-- link font awesome,  VERIFICA NUOVE VERSIONI -->
-    <!-- <link
+    <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
       integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
-    /> -->
+    />
 
     <!-- link Bootstrap -->
-    <!-- <link
+    <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
-    /> -->
-
-    <!-- link my CSS -->
-    <link rel="stylesheet" href="./css/style.css" />
+    />
 
     <!-- VUE 3 CDN -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <!-- link my CSS -->
+    <link rel="stylesheet" href="./css/style.css" />
   </head>
 
   <body>
-    <header></header>
+    <div id="app">
+      <div class="main-wrapper">
+        <main class="container">
+          <!-- Side bar con chat list -->
+          <aside class="side-bar">
+            <header class="d-flex justify-content-between align-items-center">
+              <div class="aside-image">
+                <img src="./img/avatar_io.jpg" alt="avatar_io" />
+                <span> Io </span>
+              </div>
 
-    <main></main>
+              <div class="aside-icons">
+                <i class="fa-sharp fa-solid fa-circle-notch pr-10"></i>
+                <i class="fa-solid fa-message pr-10"></i>
+                <i class="fa-solid fa-ellipsis-vertical pr-10"></i>
+              </div>
+            </header>
 
-    <footer></footer>
+            <!-- Notifiche -->
+            <div class="notifications d-flex align-items-center">
+              <div class="bell">
+                <i class="fa-solid fa-bell-slash ml-10"></i>
+              </div>
+              <div class="notifications-text">
+                <span>Ricevi notifiche di nuovi messaggi</span>
+                <span>Attiva notifiche desktop</span>
+              </div>
+            </div>
+
+            <!-- Input -->
+            <div class="input-search d-flex align-items-center pl-10">
+              <div class="input-search-icon">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </div>
+              <div class="input">
+                <input
+                  id="search-user"
+                  type="text"
+                  placeholder="Cerca o inizia una nuova chat"
+                />
+              </div>
+            </div>
+
+            <!-- User list -->
+            <section class="users-list">
+              <div
+                class="user d-flex justify-content-between"
+                v-for=" contact in contacts"
+              >
+                <div class="user-col d-flex align-items-center">
+                  <div class="user-image">
+                    <img :src="contact.avatar" />
+                  </div>
+                  <ul class="user-info ml-10">
+                    <li>{{contact.name}}</li>
+                    <li>
+                      {{contact.messages[contact.messages.length - 1].message }}
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="hour">
+                  <span>12:00</span>
+                </div>
+              </div>
+            </section>
+          </aside>
+
+          <!-- Chat -->
+          <div class="chat">
+            <header class="d-flex justify-content-between align-items-center">
+              <div class="contact d-flex justify-content-between">
+                <div class="contact-image d-flex">
+                  <img src="./img/avatar_io.jpg" alt="avatar_io" />
+                  <ul class="pl-10">
+                    <li>Io</li>
+                    <li>ultimo accesso</li>
+                  </ul>
+                </div>
+                <div
+                  class="contact-icons mr-10 d-flex justify-content-between align-items-center"
+                >
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                  <i class="fa-solid fa-paperclip"></i>
+                  <i class="fa-solid fa-ellipsis-vertical pr-10"></i>
+                </div>
+              </div>
+            </header>
+
+            <main class="chat-main">
+              <div class="chat-messages d-flex flex-column">
+                <div class="sent d-flex">
+                  <p>messaggio inviato</p>
+                </div>
+                <div class="received d-flex flex-column">
+                  <p>messaggio ricevuto bla bla bla bla</p>
+                </div>
+              </div>
+            </main>
+
+            <footer
+              class="chat-footer d-flex justify-content-between align-items-center"
+            >
+              <div id="smile" class="d-flex pl-20">
+                <i class="fa-regular fa-face-smile"></i>
+              </div>
+              <div class="input-message">
+                <input type="text" placeholder="Scrivi un messaggio..." />
+              </div>
+              <div id="microphone" class="pr-20">
+                <i class="fa-solid fa-microphone"></i>
+              </div>
+            </footer>
+          </div>
+        </main>
+      </div>
+    </div>
 
     <!-- link a javascript -->
     <script type="text/javascript" src="./js/main.js"></script>
