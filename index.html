@@ -78,7 +78,8 @@
             <section class="users-list">
               <div
                 class="user d-flex justify-content-between"
-                v-for=" contact in contacts"
+                v-for=" (contact, userIndex) in contacts"
+                @click="showContact(userIndex)"
               >
                 <div class="user-col d-flex align-items-center">
                   <div class="user-image">
@@ -106,7 +107,7 @@
                 <div class="contact-image d-flex">
                   <img src="./img/avatar_io.jpg" alt="avatar_io" />
                   <ul class="pl-10">
-                    <li>Io</li>
+                    <li>{{contacts[index].name}}</li>
                     <li>ultimo accesso oggi alle 12</li>
                   </ul>
                 </div>
@@ -122,11 +123,13 @@
 
             <main class="chat-main">
               <div class="chat-messages d-flex flex-column">
-                <div class="sent d-flex">
-                  <p>messaggio inviato</p>
-                </div>
-                <div class="received d-flex flex-column">
-                  <p>messaggio ricevuto bla bla bla bla</p>
+                <div
+                  class="message d-flex"
+                  :class="contact.status"
+                  v-for="contact in contacts[index].messages"
+                >
+                  <p>{{contact.message}}</p>
+                  <span>{{contact.date}}</span>
                 </div>
               </div>
             </main>
