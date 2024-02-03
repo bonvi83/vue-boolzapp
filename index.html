@@ -100,7 +100,7 @@
             </section>
           </aside>
 
-          <!-- Chat -->
+          <!-- Chat side -->
           <div class="chat">
             <header class="d-flex justify-content-between align-items-center">
               <div class="contact d-flex justify-content-between">
@@ -108,7 +108,7 @@
                   <img src="./img/avatar_io.jpg" alt="avatar_io" />
                   <ul class="pl-10">
                     <li>{{contacts[index].name}}</li>
-                    <li>ultimo accesso oggi alle 12</li>
+                    <li>ultimo accesso oggi alle 12:00</li>
                   </ul>
                 </div>
                 <div
@@ -128,9 +128,10 @@
                   :class="contact.status"
                   v-for="contact in contacts[index].messages"
                 >
-                  <!-- da sistemare problema di messaggio e data -->
-                  <p>{{contact.message}}</p>
-                  <span>{{contact.date}}</span>
+                  <!-- da sistemare problema di messaggio e data, non esce come vorrei -->
+                  <p>{{contact.message}} {{contact.date}}</p>
+                  <!-- parte da rimuovere, se trovo soluzione-->
+                  <!-- <span>{{contact.date}}</span> -->
                 </div>
               </div>
             </main>
@@ -142,7 +143,13 @@
                 <i class="fa-regular fa-face-smile"></i>
               </div>
               <div class="input-message">
-                <input type="text" placeholder="Scrivi un messaggio..." />
+                <input
+                  v-model="msgInput"
+                  type="text"
+                  @keyup.enter="newMsg()"
+                  type="text"
+                  placeholder="Scrivi un messaggio..."
+                />
               </div>
               <div id="microphone" class="pr-20">
                 <i class="fa-solid fa-microphone"></i>

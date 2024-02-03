@@ -32,7 +32,6 @@ li{
     display: flex;
 }
 
-
 .side-bar{
     width: 35%;
     height: 100%;
@@ -110,7 +109,7 @@ li{
 }
 
 
-/* Search */
+/* Search bar*/
 .input-search{
     height: 50px;
     background-color: #fafafa;
@@ -248,8 +247,7 @@ li{
 
 
 
-/* Super casino con bootstrap, faccio classi io */
-
+/* non mi "convince" bootstrap, faccio classi a mano! */
 .pr-10{
     padding-right: 10px;
 }

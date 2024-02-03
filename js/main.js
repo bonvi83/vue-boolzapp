@@ -173,7 +173,39 @@ createApp({
     methods:{
         showContact(i){
             this.index = i
+        },
+
+        newMsg(){
+            const newObjMsg = {
+                date: '10/01/2020 15:51:00',
+                message: this.msgInput,
+                status: 'sent'
+            }
+            if(this.msgInput.length === 0){
+                console.warn('nessun messaggio');
+            }else{
+                this.contacts[this.index].messages.push(newObjMsg)
+                this.answer()
+            }
+
+            this.msgInput = '';
+        },
+
+        answer(){
+            setTimeout(() => {
+                const answer = {
+                    date: '10/01/2020 15:51:00',
+                    message: 'Ok Ciccio!',
+                    status: 'received'
+                }
+
+                this.contacts[this.index].messages.push(answer)
+            }, 2000);
         }
+    },
+
+    computed:{
+        
     }
 
 }).mount('#app');
