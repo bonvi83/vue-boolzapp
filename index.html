@@ -78,14 +78,18 @@
             <section class="users-list">
               <div
                 class="user d-flex justify-content-between"
+                s
                 v-for=" (contact, userIndex) in contacts"
                 @click="showContact(userIndex)"
               >
-                <div class="user-col d-flex align-items-center">
+                <div
+                  v-if="contact.visible"
+                  class="user-col d-flex align-items-center"
+                >
                   <div class="user-image">
                     <img :src="contact.avatar" />
                   </div>
-                  <ul class="user-info ml-10">
+                  <ul v-if="contact.visible" class="user-info ml-10">
                     <li>{{contact.name}}</li>
                     <li>
                       {{contact.messages[contact.messages.length - 1].message }}
@@ -93,7 +97,7 @@
                   </ul>
                 </div>
 
-                <div class="hour">
+                <div v-if="contact.visible" class="hour">
                   <span>12:00</span>
                 </div>
               </div>
@@ -130,8 +134,6 @@
                 >
                   <!-- da sistemare problema di messaggio e data, non esce come vorrei -->
                   <p>{{contact.message}} {{contact.date}}</p>
-                  <!-- parte da rimuovere, se trovo soluzione-->
-                  <!-- <span>{{contact.date}}</span> -->
                 </div>
               </div>
             </main>
