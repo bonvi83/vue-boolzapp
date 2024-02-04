@@ -66,7 +66,7 @@
                 <i class="fa-solid fa-magnifying-glass"></i>
               </div>
               <div class="input">
-                <!-- dovrei sostituire tipe="text" con  v-model="searchBar" @keyup="filteredContact" MA SI SPACCA TUTTO-->
+                <!-- dovrei inserire dopo tipe="text"    v-model="searchBar" @keyup="filteredContact" MA SI SPACCA TUTTO-->
                 <input
                   id="search-user"
                   type="text"
@@ -88,14 +88,13 @@
                 >
                   <div class="user-image d-flex justify-content-between">
                     <img :src="contact.avatar" />
+                    <ul v-if="contact.visible" class="user-info ml-10">
+                      <li>{{contact.name}}</li>
+                      <li>
+                        {{contact.messages[contact.messages.length - 1].message }}
+                      </li>
+                    </ul>
                   </div>
-                  <ul v-if="contact.visible" class="user-info ml-10">
-                    <li>{{contact.name}}</li>
-                    <li>
-                      {{contact.messages[contact.messages.length - 1].message }}
-                    </li>
-                  </ul>
-                </div>
 
                 <div v-if="contact.visible" class="hour">
                   <span>12:00</span>
