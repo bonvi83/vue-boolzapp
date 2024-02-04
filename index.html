@@ -66,6 +66,7 @@
                 <i class="fa-solid fa-magnifying-glass"></i>
               </div>
               <div class="input">
+                <!-- dovrei sostituire tipe="text" con  v-model="searchBar" @keyup="filteredContact" MA SI SPACCA TUTTO-->
                 <input
                   id="search-user"
                   type="text"
@@ -85,7 +86,7 @@
                   v-if="contact.visible"
                   class="user-col d-flex align-items-center"
                 >
-                  <div class="user-image">
+                  <div class="user-image d-flex justify-content-between">
                     <img :src="contact.avatar" />
                   </div>
                   <ul v-if="contact.visible" class="user-info ml-10">
