@@ -167,7 +167,8 @@ createApp({
                 }
             ],
             index: 0,
-            searchBar:``
+            searchBar:``,
+            msgInput:``,
         }
     },
 

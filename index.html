@@ -69,7 +69,7 @@
                 <input
                   id="search-user"
                   type="text"
-                  v-model="searchBar" @keyup="filteredContact"
+                  v-model="searchBar" @keyup="filteredContact()"
                   placeholder="Cerca o inizia una nuova chat"
                 />
               </div>
@@ -78,17 +78,18 @@
             <!-- User list -->
             <section class="users-list">
               <div
-                class="user d-flex justify-content-between"
-                v-for=" (contact, userIndex) in filteredContact"
+                class="user justify-content-between"
+                v-for=" (contact, userIndex) in contacts"
                 @click="showContact(userIndex)"
+                v-show="contact.visible === true"
               >
                 <div
-                  v-if="contact.visible"
+                  
                   class="user-col d-flex align-items-center"
                 >
                   <div class="user-image d-flex justify-content-between">
                     <img :src="contact.avatar" />
-                    <ul v-if="contact.visible" class="user-info ml-10">
+                    <ul class="user-info ml-10">
                       <li>{{contact.name}}</li>
                       <li>
                         {{contact.messages[contact.messages.length - 1].message }}
@@ -96,7 +97,7 @@
                     </ul>
                   </div>
 
-                <div v-if="contact.visible" class="hour">
+                <div class="hour">
                   <span>12:00</span>
                 </div>
               </div>

@@ -151,6 +151,7 @@ li{
     border-bottom: 1px solid rgb(232, 232, 232);
     padding: 10px;
     cursor: pointer;
+    display:flex;
 }
 
 .users-list .user-image img{
