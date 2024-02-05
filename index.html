@@ -66,10 +66,10 @@
                 <i class="fa-solid fa-magnifying-glass"></i>
               </div>
               <div class="input">
-                <!-- dovrei inserire dopo tipe="text"    v-model="searchBar" @keyup="filteredContact" MA SI SPACCA TUTTO-->
                 <input
                   id="search-user"
                   type="text"
+                  v-model="searchBar" @keyup="filteredContact"
                   placeholder="Cerca o inizia una nuova chat"
                 />
               </div>
@@ -79,7 +79,7 @@
             <section class="users-list">
               <div
                 class="user d-flex justify-content-between"
-                v-for=" (contact, userIndex) in contacts"
+                v-for=" (contact, userIndex) in filteredContact"
                 @click="showContact(userIndex)"
               >
                 <div

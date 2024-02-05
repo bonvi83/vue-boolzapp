@@ -167,6 +167,7 @@ createApp({
                 }
             ],
             index: 0,
+            searchBar:``
         }
     },
 
@@ -201,15 +202,13 @@ createApp({
 
                 this.contacts[this.index].messages.push(answer)
             }, 2000);
-        }
-    },
+        },
 
-    computed:{
         filteredContact(){
-            return this.contacts.forEach(contact => {
+            this.contacts.forEach(contact => {
                 contact.visible = contact.name.toLowerCase().includes(this.searchBar.toLowerCase())
             })
         }
-    }
+    },
 
 }).mount('#app');
